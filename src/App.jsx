@@ -22,7 +22,6 @@ function App() {
 
   function onAddToCart(item) {
     setCartItems((prev) => [...prev, item]);
-    console.log(cartItems);
   }
 
   function onRemoveFromCart(id) {
@@ -31,7 +30,13 @@ function App() {
 
   return (
     <div className="wrapper clear">
-      {isOpen && <Cart onOpen={onOpen} cartItems={cartItems} />}
+      {isOpen && (
+        <Cart
+          onOpen={onOpen}
+          cartItems={cartItems}
+          onRemoveFromCart={onRemoveFromCart}
+        />
+      )}
       <Header onOpen={onOpen} />
       <div className="content p-50">
         <div className="d-flex align-center justify-between mb-40">

@@ -1,4 +1,4 @@
-export default function Cart({ onOpen, cartItems }) {
+export default function Cart({ cartItems, onOpen, onRemoveFromCart }) {
   return (
     <div className="overlay">
       <div className="drawer d-flex flex-column">
@@ -26,7 +26,10 @@ export default function Cart({ onOpen, cartItems }) {
                   <p className="mt-5 mb-5">{item.name}</p>
                   <b>{item.price} £</b>
                 </div>
-                <button className="close-btn">
+                <button
+                  onClick={() => onRemoveFromCart(item.id)}
+                  className="close-btn"
+                >
                   <img src="/img/delete.svg" alt="remove" />
                 </button>
               </div>
