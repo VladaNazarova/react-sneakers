@@ -157,3 +157,17 @@ header {
     opacity: 1;
   }
 }
+
+.empty-cart {
+  width: 285px;
+  height: 320px;
+  gap: 20px;
+
+  h3, p {
+    margin: 0;
+  }
+
+  p {
+    text-align: center;
+  }
+}
